@@ -1,0 +1,90 @@
+env:
+  browser: true
+  es6: true
+extends: 'eslint:recommended'
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+rules:
+    indent: # 与百度规范保持一致
+        - error
+        - 4
+        - SwitchCase: 1
+    no-console:
+        - error
+        - allow: ["error", "warn"]
+    no-restricted-syntax:
+        - off
+        - ForOfStatement
+    no-continue:
+        - off
+    no-unused-expressions: # 允许这样的形式： xxx.yyy && xxx.yyy()
+        - off
+    no-mixed-spaces-and-tabs: # 禁止使用 空格 和 tab 混合缩进
+        - error
+    arrow-parens:
+        - off
+    comma-dangle: # 与百度规范保持一致
+        - off
+    import/no-commonjs:
+        - off
+    import/no-cycle:
+        - off
+    import/no-dynamic-require:
+        - off
+    eol-last:
+        - warn
+    no-trailing-spaces:  # 禁用行尾空格
+        - error
+    no-spaced-func:  # 禁止 function 标识符和圆括号之间有空格
+        - error
+    space-unary-ops: # 要求或禁止在一元操作符之前或之后存在空格,new、delete、typeof、void、yield要求有空格，-、+、--、++、!、!!要求无空格
+        - error
+    array-bracket-spacing:  # 数组紧贴括号部分不允许包含空格。
+        - error
+        - never
+    object-curly-spacing:  # 对象紧贴花括号部分不允许包含空格。
+        - error
+        - never
+    spaced-comment: # 要求在注释前有空白
+        - error
+        - always
+    arrow-spacing: # 要求箭头函数的箭头之前和之后有空格
+        - error
+    max-len: # 每行字符不能超过120个
+        - error
+        - 120
+    lines-around-comment: # 强制注释周围有空行
+        - error
+        - {beforeBlockComment: true}
+    curly: #if、else if、else、for、while强制使用大括号，但允许在单行中省略大括号。
+        - error
+        - multi-line
+    semi:  # 不得省略语句结束的分号
+        - error
+        - always
+    no-var:  # 用let/const代替var
+        - error
+    newline-per-chained-call: # 要求方法链中每个调用都有一个换行符
+        - error
+        - {ignoreChainWithDepth: 2}
+    quotes: # 字符串开头和结束使用单引号
+        - error
+        - single
+    no-dupe-keys:  # 禁止在对象字面量中出现重复的键
+        - error
+    quote-props: # 禁止在对象文字属性名称周围使用并非严格要求的引号
+        - warn
+        - as-needed
+    no-lonely-if:
+        - error
+    no-else-return:
+        - error
+        - {allowElseIf: false}
+    brace-style:
+        - 1
+        - "stroustrup"
+        - {}

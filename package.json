@@ -1,0 +1,33 @@
+{
+  "name": "lerna-x",
+  "private": true,
+  "description": "a javaScript projects with multiple packages",
+  "version": "1.0.0",
+  "scripts": {
+    "init": "npm run clean && npm install && npm run bootstrap",
+    "clean": "rimraf package-lock.json packages/*/node_modules packages/*/package-lock.json",
+    "bootstrap": "lerna bootstrap",
+    "lint": "eslint \"packages/*/src/**/*.js\"",
+    "publish": "lerna publish --registry https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-only/lerna-repo.git"
+  },
+  "keywords": [
+    "learn",
+    "multiple",
+    "packages"
+  ],
+  "author": "xiaohong8023",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "lerna": "3.16.4"
+  },
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/The-only/lerna-repo/issues"
+  },
+  "homepage": "https://github.com/The-only/lerna-repo"
+}
